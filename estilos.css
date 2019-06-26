@@ -30,11 +30,19 @@ body {
   margin-left: auto;
 }
 
+.header-menu img {
+  display: block;
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  margin-left: auto;
+}
+
 .header-menu ul {
+  display: none;
   margin: 0;
   padding: 0;
   list-style: none;
-  display: flex;
 }
 
 .header-menu ul li {
@@ -50,7 +58,7 @@ body {
 .main {
   padding: 20px 5%;
   display: grid;
-  grid: auto / repeat(3, calc(33.3% - 20px/3));
+  grid: auto / repeat(1, 100%);
   grid-gap: 10px;
 }
 
@@ -70,3 +78,28 @@ body {
   padding: 0 5%;
 }
 
+@media (min-width: 568px) {
+  .header-menu img {
+    display: none;
+  }
+
+  .header-menu ul {
+    display: flex;
+  }
+
+  .main {
+    grid: auto / repeat(2, calc(50% - 10px/2));
+  }    
+}
+
+@media (min-width: 992px) {
+  .main {
+    grid: auto / repeat(3, calc(33.3% - 20px/3));
+  }    
+}
+
+@media (min-width: 1024px) {
+  .main {
+    grid: auto / repeat(4, calc(25% - 30px/4));
+  }    
+}
